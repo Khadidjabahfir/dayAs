@@ -1,3 +1,5 @@
+import 'package:dayas/styles/colors.dart';
+import 'package:dayas/widget/herocard.dart';
 import 'package:dayas/widget/highlighted_subtitle.dart';
 import 'package:dayas/widget/input.dart';
 import 'package:dayas/widget/subtile.dart';
@@ -43,6 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
           GetInput("Email" , "Enter your email"),
           Subtitle ("I accept the terms and privacy policy"), 
           // Hightlighted_Subtitle("Log_in" , Page)
+          GetHeroCard ("olivia redrigo" , "singer" , "assets/images/test_hero.png" , AppColors.purplePastel)
         ],
       )
      
