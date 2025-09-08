@@ -1,8 +1,11 @@
 import 'package:dayas/styles/colors.dart';
+import 'package:dayas/widget/customizedUserTask.dart';
 import 'package:dayas/widget/herocard.dart';
-import 'package:dayas/widget/highlighted_subtitle.dart';
-import 'package:dayas/widget/input.dart';
-import 'package:dayas/widget/subtile.dart';
+import 'package:dayas/widget/standardHerotask.dart';
+//import 'package:dayas/widget/highlighted_subtitle.dart';
+import 'package:dayas/widget/standardInput.dart';
+import 'package:dayas/widget/standardSubtitle.dart';
+import 'package:dayas/widget/standardTimeline.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -45,7 +48,11 @@ class _MyHomePageState extends State<MyHomePage> {
           GetInput("Email" , "Enter your email"),
           Subtitle ("I accept the terms and privacy policy"), 
           // Hightlighted_Subtitle("Log_in" , Page)
-          GetHeroCard ("olivia redrigo" , "singer" , "assets/images/test_hero.png" , AppColors.purplePastel)
+          GetHeroCard ("olivia redrigo" , "singer" , "assets/images/test_hero.png" , AppColors.purplePastel),
+          getTimeline(AppColors.purplePastel , 100), 
+          getHeroTask("wake up" , "8:30am" , "" , false  , AppColors.purplePastel), 
+          SizedBox(height: 20,),
+          getUserTask("wake up" , "8:30am" , "" , false , AppColors.purplePastel)
         ],
       )
      
