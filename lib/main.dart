@@ -1,7 +1,9 @@
 import 'package:dayas/screens/chatScreen.dart';
 import 'package:dayas/styles/colors.dart';
+import 'package:dayas/widget/chatOutline.dart';
 import 'package:dayas/widget/customizedUserTask.dart';
 import 'package:dayas/widget/herocard.dart';
+import 'package:dayas/widget/navBarWidget.dart';
 import 'package:dayas/widget/standardHerotask.dart';
 //import 'package:dayas/widget/highlighted_subtitle.dart';
 import 'package:dayas/widget/standardInput.dart';
@@ -22,14 +24,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: ChatScreen(), 
+      home: MyHomePage(), 
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
+  const MyHomePage({super.key});
+  
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -53,7 +55,13 @@ class _MyHomePageState extends State<MyHomePage> {
           getTimeline(AppColors.purplePastel , 100), 
           getHeroTask("wake up" , "8:30am" , "" , false  , AppColors.purplePastel), 
           SizedBox(height: 20,),
-          getUserTask("wake up" , "8:30am" , "" , false , AppColors.purplePastel)
+          getUserTask("wake up" , "8:30am" , "" , false , AppColors.purplePastel), 
+          GetChatOutline(
+            AppColors.purplePastel, 
+            "assets/images/test_hero.png", 
+            "olivia rodrigo"
+          ),
+
         ],
       )
      
