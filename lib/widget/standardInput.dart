@@ -21,7 +21,9 @@ Widget GetInput (String headerName , String inputField ,
                     width: 330,
                     height : 40 , 
                     child : TextField(
-                    decoration: InputDecoration(
+                      controller: controller,
+                      obscureText: obscureText,
+                      decoration: InputDecoration(
                         hintText: inputField , 
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
