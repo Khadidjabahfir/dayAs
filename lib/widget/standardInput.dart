@@ -7,6 +7,7 @@ Widget GetInput (String headerName , String inputField ,
     return Container (
         width : 330 , 
         height : 80 ,
+        
         child : Column (
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,6 +23,7 @@ Widget GetInput (String headerName , String inputField ,
                     child : TextField(
                     decoration: InputDecoration(
                         hintText: inputField , 
+                        fillColor: Colors.white,
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(color:AppColors.darkGrey , width: 1)
