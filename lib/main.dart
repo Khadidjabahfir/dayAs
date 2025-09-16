@@ -1,3 +1,4 @@
+import 'package:dayas/screens/LoginScreen.dart';
 import 'package:dayas/screens/SignUpScreen.dart';
 import 'package:dayas/screens/chatScreen.dart';
 import 'package:dayas/styles/colors.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Signupscreen(), 
+      home: Loginscreen(), 
     );
   }
 }
