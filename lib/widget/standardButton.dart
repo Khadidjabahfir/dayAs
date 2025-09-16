@@ -4,10 +4,15 @@ Widget getButton (String line , Color color , {VoidCallback? onTap} ) {
   return GestureDetector(
     onTap: onTap,
     child:  Container(
-    child : Text(line , style : LineStyles.btnText), 
+    width: 150,
+    height: 45,
     decoration: BoxDecoration(
-      color: color , 
+      color: color,
+      borderRadius: BorderRadius.circular(10)
     ),
+    child : 
+    Center( child : Text(line , style : LineStyles.btnText), 
+  ),
   ),
   )
  ; 
