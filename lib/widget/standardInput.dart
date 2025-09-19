@@ -23,7 +23,6 @@ Widget GetInput (String headerName , String inputField ,
                     child : TextField(
                       controller: controller,
                       obscureText: obscureText,
-                      
                       decoration: InputDecoration(
                         hintText: inputField , 
                         fillColor: Colors.white,
