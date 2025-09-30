@@ -26,6 +26,10 @@ Widget GetInput (String headerName , String inputField ,
                       decoration: InputDecoration(
                         hintText: inputField , 
                         fillColor: Colors.white,
+                        focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10), 
+                        borderSide: BorderSide(color : AppColors.darkGrey , width: 1)
+                      ),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10),
                             borderSide: BorderSide(color:AppColors.darkGrey , width: 1)
