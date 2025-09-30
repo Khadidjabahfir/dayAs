@@ -1,7 +1,6 @@
 import 'package:dayas/models/heroModel.dart';
 import 'package:dayas/models/routineTaskModel.dart';
 import 'package:dayas/screens/ExploreScreen.dart';
-import 'package:dayas/styles/colors.dart';
 import 'package:dayas/widget/standardButton.dart';
 import 'package:dayas/widget/standardHeroCircularProfile.dart';
 import 'package:dayas/widget/standardHerotask.dart';
