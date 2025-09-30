@@ -4,16 +4,16 @@ Widget getHeroAvatar (String ImagePath , Color color ){
     alignment: Alignment.center,
     children: [
       Container(
-        width: 100,
-        height: 100,
+        width: 130,
+        height: 130,
         decoration: BoxDecoration(
           color : color , 
-          borderRadius: BorderRadius.circular(100), 
+          borderRadius: BorderRadius.circular(130), 
         ),
       ) , 
       Image.asset(ImagePath ,
-      width : 80 ,
-      height: 80 , 
+      width : 100 ,
+      height: 100 , 
       fit: BoxFit.cover
       )
     ],
