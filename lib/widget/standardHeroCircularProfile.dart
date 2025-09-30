@@ -9,7 +9,7 @@ Widget GetHeroCircularProfile (String ImagePath, Color color , String Name , Str
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.center,
     children: [
-      SizedBox(height : 5),
+      SizedBox(height : 10),
       Text(Name , style: LineStyles.context.copyWith(color :AppColors.darkGrey , fontWeight: FontWeight.normal)) , 
       Text(Category , style: LineStyles.subtitle.copyWith(color : AppColors.lightGrey , fontWeight: FontWeight.normal))
     ],

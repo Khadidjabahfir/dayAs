@@ -1,7 +1,11 @@
+import 'package:dayas/cubits/CustomCubit.dart';
+import 'package:dayas/cubits/ExploreCubit.dart';
+import 'package:dayas/screens/ExploreScreen.dart';
+import 'package:dayas/screens/HomeScreen.dart';
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
 import 'package:flutter/material.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -13,12 +17,23 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
   final List<Widget> _pages = <Widget>[
-    // here we will add the pages once they are done 
+    DummyHomeScreen() , 
+    Explorescreen() , 
+    // 
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return MultiBlocProvider(
+    providers: [
+        BlocProvider<CustomCubit>(
+          create: (context) => CustomCubit(),
+        ),
+        BlocProvider(
+          create: (_) => Explorecubit()..fetchHeroes(),
+        ),
+    ], 
+    child : Scaffold(
         appBar: AppBar(
           title: Text('DayAs',
               style:LineStyles.header),
@@ -32,7 +47,7 @@ class _BottomBarState extends State<BottomBar> {
               _selectedIndex = index;
             });
           },
-          indicatorColor: AppColors.bluePastel,
+          indicatorColor: AppColors.purplePastel,
           selectedIndex: _selectedIndex,
           backgroundColor: Colors.white,
           
@@ -50,6 +65,7 @@ class _BottomBarState extends State<BottomBar> {
               label: 'Discussion',
             ),
           ],
-        ));
+        ))
+    );
   }
 }

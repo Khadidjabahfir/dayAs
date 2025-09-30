@@ -5,9 +5,10 @@ import 'package:flutter/material.dart';
 Widget getUserTask(
     String taskname, String start, String end, bool isDone, Color color) {
   return Container(
-    width: 300,
-    height: 40,
+    width: 330,
+    height: 50,
     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+    margin: const EdgeInsets.only(bottom : 20 ),
     decoration: BoxDecoration(
       color: (isDone) ? color : Colors.white,
       border: Border.all(

@@ -1,5 +1,6 @@
 import 'package:dayas/models/heroModel.dart';
 import 'package:dayas/models/routineTaskModel.dart';
+import 'package:dayas/screens/CustomizePlanPage.dart';
 import 'package:dayas/screens/ExploreScreen.dart';
 import 'package:dayas/widget/standardButton.dart';
 import 'package:dayas/widget/standardHeroCircularProfile.dart';
@@ -21,16 +22,26 @@ class _HeroRoutineScreenState extends State<HeroRoutineScreen> {
     Heromodel hero = widget.hero; 
     Color color = getColorFromString(hero.color); 
     return Center (
-      child : Column(children: [
+      child : Column( 
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center, 
+        children: [
         SizedBox(height : 40), 
         GetHeroCircularProfile(hero.imageUrl , color , hero.name ,hero.role), 
         SizedBox(height: 20,), 
         getTasks(hero) , 
         SizedBox(height: 20,), 
-        getButton('Customize', color) , 
+        getButton('Customize', color ,  onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>  CustomizePlanPage(hero: hero ),
+            ),
+          );
+        },) , 
       ],
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.center,), 
+     
+    ), 
     ); 
   }
 }
