@@ -9,13 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class Explorescreen extends StatelessWidget {
   const Explorescreen({super.key});
 
-  Color getColorFromString(String color) {
-    if (color == 'purple') return AppColors.purplePastel;
-    if (color == 'pink') return AppColors.pinkPastel;
-    if (color == 'blue') return AppColors.bluePastel;
-    if (color == 'yellow') return AppColors.yellowPastel;
-    return AppColors.lightGrey;
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -61,6 +55,7 @@ class Explorescreen extends StatelessWidget {
                               hero.role,
                               hero.imageUrl,
                               color,
+                              hero 
                             );
                           },
                         ),
@@ -80,4 +75,12 @@ class Explorescreen extends StatelessWidget {
       ),
     );
   }
+}
+
+Color getColorFromString(String color) {
+    if (color == 'purple') return AppColors.purplePastel;
+    if (color == 'pink') return AppColors.pinkPastel;
+    if (color == 'blue') return AppColors.bluePastel;
+    if (color == 'yellow') return AppColors.yellowPastel;
+    return AppColors.lightGrey;
 }

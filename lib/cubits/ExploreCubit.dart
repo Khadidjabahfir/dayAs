@@ -1,4 +1,5 @@
 import 'package:dayas/models/heroModel.dart';
+import 'package:dayas/models/routineTaskModel.dart';
 import 'package:dayas/states/ExploreStates.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 class Explorecubit extends Cubit<Explorestates> {
@@ -8,11 +9,60 @@ class Explorecubit extends Cubit<Explorestates> {
     try {
       await Future.delayed(Duration(seconds: 2)); 
       List<Heromodel> heroes = [
-        Heromodel(name: 'Hero 1', role: 'Description 1' , imageUrl: 'assets/images/test_hero.png', color: 'purple'),
-        Heromodel(name: 'Hero 2', role: 'Description 2' , imageUrl: 'assets/images/test_hero.png' , color : 'blue'),
-        Heromodel(name: 'Hero 1', role: 'Description 1' , imageUrl: 'assets/images/test_hero.png', color: 'yellow'),
-        Heromodel(name: 'Hero 2', role: 'Description 2' , imageUrl: 'assets/images/test_hero.png' , color : 'blue'),
-      ];
+          Heromodel(
+            name: 'Olivia Rodrigo',
+            role: 'Singer-Songwriter',
+            imageUrl: 'assets/images/olivia.png',
+            color: 'purple',
+            tasks: [
+              routineTasksModel(
+                taskName: 'Songwriting',
+                taskStart: '09:00',
+                taskEnd: '11:00',
+                taskColor: 'purple',
+              ),
+              routineTasksModel(
+                taskName: 'Rehearsal',
+                taskStart: '14:00',
+                taskEnd: '16:00',
+                taskColor: 'purple',
+              ),
+              routineTasksModel(
+                taskName: 'Concert',
+                taskStart: '20:00',
+                taskEnd: '22:00',
+                taskColor: 'purple',
+              ),
+            ],
+          ),
+          Heromodel(
+            name: 'SEVENTEEN',
+            role: 'K-pop Group',
+            imageUrl: 'assets/images/olivia.png',
+            color: 'blue',
+            tasks: [
+              routineTasksModel(
+                taskName: 'Dance Practice',
+                taskStart: '10:00',
+                taskEnd: '13:00',
+                taskColor: 'blue',
+              ),
+              routineTasksModel(
+                taskName: 'Recording',
+                taskStart: '15:00',
+                taskEnd: '18:00',
+                taskColor: 'blue',
+              ),
+              routineTasksModel(
+                taskName: 'Fan Meeting',
+                taskStart: '19:00',
+                taskEnd: '21:00',
+                taskColor: 'blue',
+              ),
+            ],
+          ),
+        ];
+
       emit(ExploreSuccessState(herolist: heroes));
     } catch (e) {
       emit(ExploreErrorState(error: '$e'));

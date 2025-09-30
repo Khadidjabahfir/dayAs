@@ -1,8 +1,9 @@
+import 'package:dayas/models/heroModel.dart';
 import 'package:dayas/screens/HeroRoutineScreen.dart';
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
 import 'package:flutter/material.dart';
-Widget GetHeroCard (BuildContext context,String Name , String Category , String ImagePath , Color color ) {
+Widget GetHeroCard (BuildContext context,String Name , String Category , String ImagePath , Color color , Heromodel hero ) {
   return GestureDetector(
     child : Container(
     width : 179 , 
@@ -11,7 +12,7 @@ Widget GetHeroCard (BuildContext context,String Name , String Category , String 
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         GetHeroPhoto(ImagePath , color ) , 
-        SizedBox(height: 5,),
+        SizedBox(height: 10,),
         GetHeroDef (Name , Category)
       ],
     )
@@ -19,7 +20,7 @@ Widget GetHeroCard (BuildContext context,String Name , String Category , String 
   onTap: () {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) =>HeroRoutineScreen( heroname : Name ))
+      MaterialPageRoute(builder: (context) =>HeroRoutineScreen( hero  : hero ))
     );
   },
   ); 

@@ -6,6 +6,7 @@ Widget getHeroTask(String taskname , String start , String end , bool isDone , C
   return Container(
     width: 300,
     height: 70,
+    margin: const EdgeInsets.only(bottom: 20),
     padding: const EdgeInsets.only(left: 17),
     decoration: BoxDecoration( 
       color : (isDone) ? color : (Colors.white),
@@ -19,8 +20,10 @@ Widget getHeroTask(String taskname , String start , String end , bool isDone , C
       mainAxisAlignment: MainAxisAlignment.start ,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(taskname , style: LineStyles.secodHeader.copyWith(color: AppColors.darkGrey)), 
-        Text((end!="" )? start + " - " + end : start , style: LineStyles.context.copyWith(color: AppColors.lightGrey) ), 
+        SizedBox(height: 5,),
+        Text(taskname , style: LineStyles.secodHeader.copyWith(color: AppColors.darkGrey , fontWeight: FontWeight.normal )), 
+        SizedBox(height: 2,), 
+        Text((end!="" )? start + " - " + end : start , style: LineStyles.context.copyWith(color: AppColors.lightGrey ,fontWeight: FontWeight.normal ) ), 
       ],
     ),
   ); 

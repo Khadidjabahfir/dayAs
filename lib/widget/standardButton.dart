@@ -11,7 +11,7 @@ Widget getButton (String line , Color color , {VoidCallback? onTap} ) {
       borderRadius: BorderRadius.circular(10)
     ),
     child : 
-    Center( child : Text(line , style : LineStyles.btnText), 
+    Center( child : Text(line , style : LineStyles.btnText.copyWith(color : Colors.white , fontWeight: FontWeight.normal)), 
   ),
   ),
   )
