@@ -2,11 +2,12 @@ import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
 import 'package:flutter/material.dart';
 
-Widget GetChatOutline(Color color, String imagePath, String heroName) {
+Widget GetChatOutline(Color color, String imagePath, String heroName , {VoidCallback? onTap}) {
   const subtitle = "fans"; 
-  return Container(
-    width: 350, 
-    
+  return GestureDetector(
+  onTap: onTap,
+  child : Container(
+    width: 350,
     padding: const EdgeInsets.all(10),
     margin: const EdgeInsets.fromLTRB(40, 10, 40, 10), 
     decoration: BoxDecoration(
@@ -45,5 +46,6 @@ Widget GetChatOutline(Color color, String imagePath, String heroName) {
         ),
       ],
     ),
+  )
   );
 }

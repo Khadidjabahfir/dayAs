@@ -8,19 +8,19 @@ class Chatcubit extends Cubit<ChatStates> {
     try {
       await Future.delayed(Duration(seconds: 2)); 
       List<Heromodel> heroes = [
-          Heromodel(
-            name: 'Olivia Rodrigo',
-            role: 'Singer-Songwriter',
-            imageUrl: 'assets/images/olivia.png',
-            color: 'purple',
-          ),
-          Heromodel(
-            name: 'SEVENTEEN',
-            role: 'K-pop Group',
-            imageUrl: 'assets/images/olivia.png',
-            color: 'blue',
+          // Heromodel(
+          //   name: 'Olivia Rodrigo',
+          //   role: 'Singer-Songwriter',
+          //   imageUrl: 'assets/images/olivia.png',
+          //   color: 'purple',
+          // ),
+          // Heromodel(
+          //   name: 'SEVENTEEN',
+          //   role: 'K-pop Group',
+          //   imageUrl: 'assets/images/olivia.png',
+          //   color: 'blue',
             
-          ),
+          // ),
         ];
 
       emit(ChatStateLoaded(herolist: heroes));

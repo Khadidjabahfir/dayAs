@@ -29,7 +29,7 @@ Widget getAsmallerbtn (String line , Color color , {VoidCallback? onTap} ) {
         borderRadius: BorderRadius.circular(10)
       ),
       child : 
-      Center( child : Text(line , style : LineStyles.subtitle.copyWith(color : Colors.white , fontWeight: FontWeight.normal)), 
+      Center( child : Text(line , style : LineStyles.subtitle.copyWith(color : AppColors.darkGrey , fontWeight: FontWeight.normal)), 
     ),
     ),
     )
