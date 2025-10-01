@@ -8,6 +8,7 @@ Widget GetChatOutline(Color color, String imagePath, String heroName) {
     width: 350, 
     
     padding: const EdgeInsets.all(10),
+    margin: const EdgeInsets.fromLTRB(40, 10, 40, 10), 
     decoration: BoxDecoration(
       border: Border.all(color: color, width: 1),
       borderRadius: BorderRadius.circular(16),
@@ -15,7 +16,6 @@ Widget GetChatOutline(Color color, String imagePath, String heroName) {
     ),
     child: Row(
       children: [
-        // Left Image
         ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: Image.asset(

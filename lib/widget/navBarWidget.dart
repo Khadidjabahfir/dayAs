@@ -2,6 +2,7 @@ import 'package:dayas/cubits/CustomCubit.dart';
 import 'package:dayas/cubits/ExploreCubit.dart';
 import 'package:dayas/screens/ExploreScreen.dart';
 import 'package:dayas/screens/HomeScreen.dart';
+import 'package:dayas/screens/chatsScreen.dart';
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class _BottomBarState extends State<BottomBar> {
   final List<Widget> _pages = <Widget>[
     DummyHomeScreen() , 
     Explorescreen() , 
-    // 
+    ChatsScreen()
   ];
 
   @override

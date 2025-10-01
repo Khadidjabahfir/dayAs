@@ -5,6 +5,7 @@ import 'package:dayas/states/Customstates.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// TODO : Fix this page especially after implementing the backend 
 class CustomCubit extends Cubit<CustomStates> {
   CustomCubit() : super(CustomStates());
 
