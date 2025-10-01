@@ -1,4 +1,5 @@
 import 'package:dayas/screens/ExploreScreen.dart';
+import 'package:dayas/screens/editTasksScreen.dart';
 import 'package:dayas/widget/customUserTask.dart';
 import 'package:dayas/widget/customsubtasks.dart';
 import 'package:dayas/widget/standardTimeline.dart';
@@ -37,12 +38,12 @@ class CustomTaskWithSubtasks extends StatelessWidget {
           Padding(padding: const EdgeInsets.only(top : 20) , child: 
            getTimeline(getColorFromString(task.taskColor), lineHeight),
           ), 
-          const SizedBox(width: 10), // small spacing between line & task
+          const SizedBox(width: 10), 
         ],
 
         Expanded(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start, // Keep start for standard list/timeline structure
+            crossAxisAlignment: CrossAxisAlignment.start, 
             children: [
               if (isSubtask)
                 Padding(
@@ -60,6 +61,7 @@ class CustomTaskWithSubtasks extends StatelessWidget {
                             .toggleSubTaskDone(parentIndex!, index);
                       }
                     },
+                    
                   ),
                 )
               else
@@ -72,6 +74,14 @@ class CustomTaskWithSubtasks extends StatelessWidget {
                   onDoubleTap: () {
                     context.read<CustomCubit>().toggleTaskDone(index);
                   },
+                  onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>  EditTasksScreen (task  : task ),
+                        ),
+                      );
+                    },
                 ),
 
               // render subtasks

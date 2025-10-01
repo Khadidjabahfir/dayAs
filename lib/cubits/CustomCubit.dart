@@ -30,10 +30,39 @@ class CustomCubit extends Cubit<CustomStates> {
     emit(state.copyWith(tasks: customizedTasks));
   }
 
-  void addTask(CustomizedUserTask task) {
-    final updatedTasks = List<CustomizedUserTask>.from(state.tasks)..add(task);
+  void addSubTask(int parentTaskIndex, CustomizedUserTask subTask) {
+    if (parentTaskIndex < 0 || parentTaskIndex >= state.tasks.length) return;
+
+    final updatedTasks = List<CustomizedUserTask>.from(state.tasks);
+    final parentTask = updatedTasks[parentTaskIndex];
+
+    
+    final available = timeLeftToPlan(parentTaskIndex);
+    final subTaskDuration = _getDuration(subTask.taskStart, subTask.taskEnd);
+
+   
+    if (subTaskDuration > available) {
+      
+      print("Not enough time left for this subtask");
+      return;
+    }
+
+   
+    final updatedSubtasks = List<CustomizedUserTask>.from(parentTask.subtasks ?? [])
+      ..add(subTask);
+
+    updatedTasks[parentTaskIndex] = CustomizedUserTask(
+      heroName: parentTask.heroName,
+      taskName: parentTask.taskName,
+      taskStart: parentTask.taskStart,
+      taskEnd: parentTask.taskEnd,
+      taskColor: parentTask.taskColor,
+      subtasks: updatedSubtasks,
+    )..isDone = parentTask.isDone;
+
     emit(state.copyWith(tasks: updatedTasks));
   }
+
 
   void removeTask(CustomizedUserTask task) {
     final updatedTasks = List<CustomizedUserTask>.from(state.tasks)..remove(task);
@@ -99,4 +128,37 @@ class CustomCubit extends Cubit<CustomStates> {
   Future<void> savePlan() async {
     // TODO: implement API or local storage saving here
   }
+
+  
+  int timeLeftToPlan(int taskIndex) {
+    if (taskIndex < 0 || taskIndex >= state.tasks.length) return 0;
+
+    final task = state.tasks[taskIndex];
+    final totalTaskDuration = _getDuration(task.taskStart, task.taskEnd);
+
+    
+    int usedBySubtasks = 0;
+    for (var sub in task.subtasks ?? []) {
+      usedBySubtasks += _getDuration(sub.taskStart, sub.taskEnd);
+    }
+
+    final left = totalTaskDuration - usedBySubtasks;
+    return left > 0 ? left : 0;
+  }
+  int _getDuration(String start, String end) {
+    if (start.isEmpty || end.isEmpty) return 0;
+    try {
+      final startParts = start.split(":").map(int.parse).toList();
+      final endParts = end.split(":").map(int.parse).toList();
+
+      final startMinutes = startParts[0] * 60 + startParts[1];
+      final endMinutes = endParts[0] * 60 + endParts[1];
+
+      return (endMinutes - startMinutes).clamp(0, 1440);
+    } catch (e) {
+      return 0;
+    }
+  }
+  
+  
 }
