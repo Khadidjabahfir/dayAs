@@ -2,7 +2,7 @@ import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
 import 'package:dayas/widget/standardButton.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+
 
 class EndingTheChallengeRoutine extends StatelessWidget {
   final double score ; 

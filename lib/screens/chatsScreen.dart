@@ -3,7 +3,6 @@ import 'package:dayas/models/heroModel.dart';
 import 'package:dayas/screens/ExploreScreen.dart';
 import 'package:dayas/states/chatStates.dart';
 import 'package:dayas/styles/colors.dart';
-import 'package:dayas/styles/lineStyles.dart';
 import 'package:dayas/widget/chatOutline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
