@@ -13,13 +13,16 @@ class CustomTaskWithSubtasks extends StatelessWidget {
   final int index;
   final int? parentIndex;
   final bool isSubtask;
+  
 
   const CustomTaskWithSubtasks({
     super.key,
     required this.task,
     required this.index,
+    
     this.parentIndex,
     this.isSubtask = false,
+    
   });
 
   @override
@@ -81,8 +84,9 @@ class CustomTaskWithSubtasks extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => EditTasksScreen(
-                            task: task       
+                          builder: (_) => BlocProvider.value(
+                            value: context.read<CustomCubit>(),
+                            child: EditTasksScreen(task: task),
                           ),
                         ),
                       );

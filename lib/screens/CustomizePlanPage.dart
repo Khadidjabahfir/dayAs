@@ -16,7 +16,7 @@ class CustomizePlanPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color color = getColorFromString(hero.color);
-
+    
     return BlocProvider(
       create: (_) => CustomCubit()..loadTasks(hero.name, hero.tasks ?? []),
       child: Scaffold(
@@ -37,6 +37,7 @@ class CustomizePlanPage extends StatelessWidget {
                     ),
                     child: BlocBuilder<CustomCubit, CustomStates>(
                       builder: (context, state) {
+                        
                         return ListView.builder(
                           padding: const EdgeInsets.all(5),
                           itemCount: state.tasks.length,
@@ -45,6 +46,7 @@ class CustomizePlanPage extends StatelessWidget {
                             return CustomTaskWithSubtasks(
                               task: task,
                               index: index,
+                              
                             );
                           },
                         );
