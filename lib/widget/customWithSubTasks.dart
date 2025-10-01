@@ -75,16 +75,22 @@ class CustomTaskWithSubtasks extends StatelessWidget {
                     context.read<CustomCubit>().toggleTaskDone(index);
                   },
                   onTap: (){
+                      final cubit = context.read<CustomCubit>();
+                      final stateTasks = cubit.state.tasks;
+
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>  EditTasksScreen (task  : task ),
+                          builder: (context) => EditTasksScreen(
+                            task: task       
+                          ),
                         ),
                       );
                     },
+
                 ),
 
-              // render subtasks
+              
               if (task.subtasks != null && task.subtasks!.isNotEmpty)
                 ...task.subtasks!.asMap().entries.map((entry) {
                   final subIndex = entry.key;
