@@ -2,6 +2,7 @@ import 'package:dayas/models/heroModel.dart';
 import 'package:dayas/models/routineTaskModel.dart';
 import 'package:dayas/screens/CustomizePlanPage.dart';
 import 'package:dayas/screens/ExploreScreen.dart';
+import 'package:dayas/styles/lineStyles.dart';
 import 'package:dayas/widget/standardButton.dart';
 import 'package:dayas/widget/standardHeroCircularProfile.dart';
 import 'package:dayas/widget/standardHerotask.dart';
@@ -21,34 +22,47 @@ class _HeroRoutineScreenState extends State<HeroRoutineScreen> {
   Widget build (BuildContext context ) {
     Heromodel hero = widget.hero; 
     Color color = getColorFromString(hero.color); 
-    return Center (
-      child : Column( 
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center, 
+    return Scaffold (
+      appBar: AppBar(
+          title: Text('DayAs',
+              style:LineStyles.header),
+          backgroundColor: Colors.white,
+          centerTitle: true,
+        ),
+        backgroundColor: Colors.white ,
+      body: SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-        SizedBox(height : 40), 
-        GetHeroCircularProfile(hero.imageUrl , color , hero.name ,hero.role), 
-        SizedBox(height: 20,), 
-        getTasks(hero) , 
-        SizedBox(height: 20,), 
-        getButton('Customize', color ,  onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) =>  CustomizePlanPage(hero: hero ),
-            ),
-          );
-        },) , 
-      ],
-     
-    ), 
+          const SizedBox(height: 40),
+          GetHeroCircularProfile(hero.imageUrl, color, hero.name, hero.role),
+          const SizedBox(height: 20),
+          getTasks(hero), 
+          const SizedBox(height: 20),
+          getButton(
+            'Customize',
+            color,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CustomizePlanPage(hero: hero , isfinal : false ),
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 30),
+        ],
+      ),
+    ),
+
     ); 
   }
 }
 Widget getTasks(Heromodel hero) {
   final tasks = hero.tasks ?? [];
 
-  return ListView.builder(
+  return  ListView.builder(
     shrinkWrap: true, 
     physics: NeverScrollableScrollPhysics(), 
     padding: const EdgeInsets.all(5),
@@ -64,7 +78,7 @@ Widget heroTimelineTask (routineTasksModel task ) {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          getTimeline(getColorFromString(task.taskColor) , 70) , 
+          getTimeline(getColorFromString(task.taskColor) , 85) , 
           SizedBox(width: 25 ,), 
           getHeroTask(
             task.taskName,

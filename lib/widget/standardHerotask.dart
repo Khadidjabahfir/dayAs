@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 Widget getHeroTask(String taskname , String start , String end , bool isDone , Color color ) {
   return Container(
     width: 300,
-    height: 70,
+    height: 85,
     margin: const EdgeInsets.only(bottom: 20),
     padding: const EdgeInsets.only(left: 17),
     decoration: BoxDecoration( 

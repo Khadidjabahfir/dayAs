@@ -322,4 +322,42 @@ class CustomCubit extends Cubit<CustomStates> {
     final planned = getTotalPlannedTime(taskIndex);
     return (planned / total * 100).clamp(0.0, 100.0);
   }
+  
+  Future<double> endRoutine() async {
+    await loadSavedPlans(); 
+    if (state.tasks.isEmpty) return 0.0;
+
+    int total = 0;
+    int completed = 0;
+
+    for (var task in state.tasks) {
+    
+      total++;
+      if (task.isDone == true) {
+        completed++;
+      }
+
+    
+      for (var sub in task.subtasks ?? []) {
+        total++;
+        if (sub.isDone == true) {
+          completed++;
+        }
+      }
+    }
+
+  
+    if (total == 0) return 0.0;
+
+
+    final score = (completed / total) * 100;
+
+
+    await clearSavedPlans();
+
+
+
+    return score;
+  }
+// for the caching it will be handled when dealing with the backend. 
 }

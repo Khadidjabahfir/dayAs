@@ -1,3 +1,4 @@
+import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
 import 'package:flutter/material.dart';
 Widget getButton (String line , Color color , {VoidCallback? onTap} ) {
@@ -11,7 +12,7 @@ Widget getButton (String line , Color color , {VoidCallback? onTap} ) {
       borderRadius: BorderRadius.circular(10)
     ),
     child : 
-    Center( child : Text(line , style : LineStyles.btnText.copyWith(color : Colors.white , fontWeight: FontWeight.normal)), 
+    Center( child : Text(line , style : LineStyles.btnText.copyWith(color : AppColors.darkGrey , fontWeight: FontWeight.normal)), 
   ),
   ),
   )
