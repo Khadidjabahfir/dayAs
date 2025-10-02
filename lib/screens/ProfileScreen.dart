@@ -33,7 +33,21 @@ class Profilescreen extends StatelessWidget {
         final email = snapshot.data;
         if (email == null) {
           return Scaffold(
-            body: Center(child: Text("No email saved. Please log in.")),
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("No email saved. Please log in."),
+                  SizedBox(height: 16),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context); // or navigate to your login screen
+                    },
+                    child: Text("Go to Login"),
+                  ),
+                ],
+              ),
+            ),
           );
         }
 

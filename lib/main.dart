@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'DayAs',
-        home: const Profilescreen(), 
+        home: const BottomBar(), 
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:dayas/cubits/CustomCubit.dart';
 import 'package:dayas/cubits/ExploreCubit.dart';
 import 'package:dayas/screens/ExploreScreen.dart';
 import 'package:dayas/screens/HomeScreen.dart';
+import 'package:dayas/screens/ProfileScreen.dart';
 import 'package:dayas/screens/chatsScreen.dart';
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
@@ -20,7 +21,8 @@ class _BottomBarState extends State<BottomBar> {
   final List<Widget> _pages = <Widget>[
     DummyHomeScreen() , 
     Explorescreen() , 
-    ChatsScreen()
+    ChatsScreen() , 
+    Profilescreen()
   ];
 
   @override
@@ -65,8 +67,13 @@ class _BottomBarState extends State<BottomBar> {
               icon: Icon(Icons.chat_bubble),
               label: 'Discussion',
             ),
+            NavigationDestination(
+              icon: Icon(Icons.account_balance),
+              label: 'account',
+            ),
           ],
-        ))
+        ),
+        )
     );
   }
 }
