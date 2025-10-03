@@ -1,8 +1,9 @@
 import 'package:dayas/cubits/LoginCubit.dart';
-import 'package:dayas/screens/HomeScreen.dart';
+import 'package:dayas/screens/SignUpScreen.dart';
 import 'package:dayas/states/LoginStates.dart';
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
+import 'package:dayas/widget/navBarWidget.dart';
 import 'package:dayas/widget/standardButton.dart';
 import 'package:dayas/widget/standardInput.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,7 +27,7 @@ class _LoginscreenState extends State<Loginscreen> {
   }
 
   void login(BuildContext context) {
-    // Trigger Cubit
+   
     context.read<Logincubit>().login(
       emailController.text,
       passwordController.text,
@@ -47,11 +48,11 @@ class _LoginscreenState extends State<Loginscreen> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    // going to fix this to route 
-                      builder: (_) => const DummyHomeScreen()),
+                    
+                      builder: (_) => const BottomBar()),
                 );
-              } else if (state is loginErrorState) {
-                // Show error
+              } else if (state is LoginErrorState) {
+                
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('${state.error}')),
                 );
@@ -78,19 +79,24 @@ class _LoginscreenState extends State<Loginscreen> {
                   if (state is LoginLoadingState)
                     CircularProgressIndicator( color : AppColors.purplePastel)
                   else
-                    getButton("Signup", AppColors.purplePastel, onTap: () {
+                    getButton("Sign in", AppColors.purplePastel, onTap: () {
                       login(context);
                     }),
                   const SizedBox(height: 20),
                    Row (mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text("Already have an account? " , style: LineStyles.act_subtitle.copyWith(color: AppColors.darkGrey)), 
+                    Text("You don't have an account " , style: LineStyles.act_subtitle.copyWith(color: AppColors.darkGrey)), 
                     GestureDetector(
                       onTap: () {
-                        Navigator.pop(context);
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            
+                              builder: (_) => const Signupscreen()),
+                        );
                       },
-                      child: Text("Log in" , style: LineStyles.act_subtitle.copyWith(color: AppColors.purplePastel , decoration: TextDecoration.underline))
+                      child: Text("Sign up" , style: LineStyles.act_subtitle.copyWith(color: AppColors.purplePastel , decoration: TextDecoration.underline))
                     )
                   ],)
                 ],

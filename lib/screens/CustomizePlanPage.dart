@@ -1,7 +1,9 @@
 import 'package:dayas/cubits/CustomCubit.dart';
 import 'package:dayas/models/heroModel.dart';
+import 'package:dayas/screens/EndingTheChallengeScreen.dart';
 import 'package:dayas/screens/ExploreScreen.dart';
 import 'package:dayas/states/Customstates.dart';
+import 'package:dayas/styles/lineStyles.dart';
 import 'package:dayas/widget/customWithSubTasks.dart';
 import 'package:dayas/widget/standardButton.dart';
 import 'package:dayas/widget/standardHeroCircularProfile.dart';
@@ -10,16 +12,31 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CustomizePlanPage extends StatelessWidget {
   final Heromodel hero;
+  final bool isfinal ; 
 
-  const CustomizePlanPage({Key? key, required this.hero}) : super(key: key);
+  const CustomizePlanPage({Key? key, required this.hero , required this.isfinal}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Color color = getColorFromString(hero.color);
-
+    
     return BlocProvider(
-      create: (_) => CustomCubit()..loadTasks(hero.name, hero.tasks ?? []),
+      create: (_) {
+        final cubit = CustomCubit();
+        if (isfinal) {
+          cubit.loadSavedPlans(); 
+        } else {
+          cubit.loadTasks(hero.name, hero.tasks ?? []);
+        }
+        return cubit;
+      },
       child: Scaffold(
+        appBar: AppBar(
+          title: Text('DayAs',
+              style:LineStyles.header),
+          backgroundColor: Colors.white,
+          centerTitle: true,
+        ), 
         backgroundColor: Colors.white,
         body: Center(
           child: Column(
@@ -37,6 +54,7 @@ class CustomizePlanPage extends StatelessWidget {
                     ),
                     child: BlocBuilder<CustomCubit, CustomStates>(
                       builder: (context, state) {
+                        
                         return ListView.builder(
                           padding: const EdgeInsets.all(5),
                           itemCount: state.tasks.length,
@@ -45,6 +63,7 @@ class CustomizePlanPage extends StatelessWidget {
                             return CustomTaskWithSubtasks(
                               task: task,
                               index: index,
+                              
                             );
                           },
                         );
@@ -54,11 +73,29 @@ class CustomizePlanPage extends StatelessWidget {
                 ),
                ), 
                SizedBox(height: 20,),
-              getButton('Finalize', color, onTap: () {
+               if (!isfinal )
+               getButton('Finalize', color, onTap: () {
                 final tasks = context.read<CustomCubit>().state.tasks;
                 print("Finalized tasks: $tasks");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CustomizePlanPage(hero: hero, isfinal: true),
+                  ),
+                );
+              }),
+              if (isfinal ) 
+              getButton('End Routine', color, onTap: () async{
+                final score = await context.read<CustomCubit>().endRoutine();
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EndingTheChallengeRoutine(score :score),
+                  ),
+                );
               }),
               SizedBox(height : 30), 
+              
             ],
           ),
         )

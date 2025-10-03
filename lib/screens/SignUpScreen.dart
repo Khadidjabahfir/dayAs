@@ -1,8 +1,10 @@
 import 'package:dayas/cubits/SignUpCubit.dart';
 import 'package:dayas/screens/HomeScreen.dart';
+import 'package:dayas/screens/LoginScreen.dart';
 import 'package:dayas/states/SignUpState.dart';
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
+import 'package:dayas/widget/navBarWidget.dart';
 import 'package:dayas/widget/standardButton.dart';
 import 'package:dayas/widget/standardInput.dart';
 import 'package:flutter/material.dart';
@@ -53,11 +55,11 @@ class _SignupscreenState extends State<Signupscreen> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    // going to fix this to route 
-                      builder: (_) => const DummyHomeScreen()),
+                   
+                      builder: (_) => const BottomBar()),
                 );
               } else if (state is SignupstateError) {
-                // Show error
+                
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('${state.error}')),
                 );
@@ -102,7 +104,12 @@ class _SignupscreenState extends State<Signupscreen> {
                     Text("Already have an account? " , style: LineStyles.act_subtitle.copyWith(color: AppColors.darkGrey)), 
                     GestureDetector(
                       onTap: () {
-                        Navigator.pop(context);
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                            
+                                builder: (_) => const Loginscreen()),
+                          );
                       },
                       child: Text("Log in" , style: LineStyles.act_subtitle.copyWith(color: AppColors.bluePastel , decoration: TextDecoration.underline))
                     )
