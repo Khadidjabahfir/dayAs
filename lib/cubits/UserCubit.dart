@@ -1,7 +1,7 @@
 import 'package:dayas/models/UserModel.dart';
 import 'package:dayas/states/userStates.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
 
 class Usercubit extends Cubit<Userstates> {
   Usercubit() : super(UserstatesInitial());
