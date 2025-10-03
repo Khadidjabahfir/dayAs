@@ -3,6 +3,7 @@ import 'package:dayas/screens/HomeScreen.dart';
 import 'package:dayas/states/LoginStates.dart';
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
+import 'package:dayas/widget/navBarWidget.dart';
 import 'package:dayas/widget/standardButton.dart';
 import 'package:dayas/widget/standardInput.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,7 +27,7 @@ class _LoginscreenState extends State<Loginscreen> {
   }
 
   void login(BuildContext context) {
-    // Trigger Cubit
+   
     context.read<Logincubit>().login(
       emailController.text,
       passwordController.text,
@@ -47,11 +48,11 @@ class _LoginscreenState extends State<Loginscreen> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    // going to fix this to route 
-                      builder: (_) => const DummyHomeScreen()),
+                    
+                      builder: (_) => const BottomBar()),
                 );
-              } else if (state is loginErrorState) {
-                // Show error
+              } else if (state is LoginErrorState) {
+                
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('${state.error}')),
                 );

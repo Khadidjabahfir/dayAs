@@ -15,3 +15,7 @@ class UserstatesError extends Userstates{
   String error ; 
   UserstatesError ({required this.error}); 
 }
+class UserSavingLoading extends Userstates {
+
+}
+
