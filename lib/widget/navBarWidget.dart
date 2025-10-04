@@ -10,21 +10,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BottomBar extends StatefulWidget {
-  const BottomBar({super.key});
+  final int initialIndex; 
+  const BottomBar({super.key, this.initialIndex = 0});
 
   @override
   State<BottomBar> createState() => _BottomBarState();
 }
 
 class _BottomBarState extends State<BottomBar> {
+ 
   int _selectedIndex = 0;
   final List<Widget> _pages = <Widget>[
-    DummyHomeScreen() , 
+    HomeScreen() , 
     Explorescreen() , 
     ChatsScreen() , 
     Profilescreen()
   ];
-
+   @override
+  void initState() {
+    super.initState();
+    _selectedIndex = widget.initialIndex; 
+  }
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
@@ -68,7 +74,7 @@ class _BottomBarState extends State<BottomBar> {
               label: 'Discussion',
             ),
             NavigationDestination(
-              icon: Icon(Icons.account_balance),
+              icon: Icon(Icons.person),
               label: 'account',
             ),
           ],
