@@ -6,9 +6,7 @@ Widget GetHabit(String habitName, bool isdone, {VoidCallback? onTap}) {
   return GestureDetector(
     onTap: onTap,
     child: Container(
-      width: 200,
-      height: 100,
-      margin: const EdgeInsets.symmetric(horizontal: 8),
+      margin: const EdgeInsets.all(20),
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: isdone 
@@ -23,7 +21,7 @@ Widget GetHabit(String habitName, bool isdone, {VoidCallback? onTap}) {
       child: Center(
         child: Text(
           habitName,
-          style: LineStyles.context,
+          style: LineStyles.context.copyWith(color : AppColors.darkGrey),
           textAlign: TextAlign.center,
         ),
       ),
