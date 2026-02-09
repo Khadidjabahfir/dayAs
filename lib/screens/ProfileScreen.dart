@@ -94,8 +94,8 @@ class _ProfileAccountInfoState extends State<ProfileAccountInfo> {
   @override
   void initState() {
     super.initState();
-    _usernameController = TextEditingController(text: widget.user.name ?? '');
-    _birthdayController = TextEditingController(text: widget.user.birthday ?? '');
+    _usernameController = TextEditingController(text: widget.user.name );
+    _birthdayController = TextEditingController(text: widget.user.birthday);
   }
 
   @override
