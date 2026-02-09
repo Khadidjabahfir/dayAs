@@ -1,5 +1,4 @@
 import 'package:dayas/cubits/SignUpCubit.dart';
-import 'package:dayas/screens/HomeScreen.dart';
 import 'package:dayas/screens/LoginScreen.dart';
 import 'package:dayas/states/SignUpState.dart';
 import 'package:dayas/styles/colors.dart';

@@ -32,36 +32,14 @@ class _AddHabitsState extends State<AddHabits> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height : 30), 
+            SizedBox(height : 50 ), 
             Text(
               "Your Habits",
               style: LineStyles.secodHeader.copyWith(color : AppColors.darkGrey),
             ),
-            SizedBox(height: 16),
-            Expanded(
-              child: _habits.isNotEmpty
-                  ? ListView.builder(
-                      itemCount: _habits.length,
-                      itemBuilder: (context, index) {
-                        final habitName = _habits[index]; 
-                        return SizedBox(
-                          width : 200 , 
-                          child: GetHabit(habitName, false),
-                        );
-                      },
-                    )
-                  : Center(
-                      child: Text(
-                        "No habits added yet",
-                        style: TextStyle(color: Colors.grey),
-                      ),
-                    ),
-            ),
-            SizedBox(height: 16),
+            SizedBox(height: 30),
             GetInput("Habits", "Habit name" , controller: _habitController),
             SizedBox(height: 16),
-            
-              
             getButton("Add Habit", AppColors.yellowPastel ,  onTap: () {
                 final habit = _habitController.text.trim();
                 if (habit.isNotEmpty) {
@@ -76,6 +54,36 @@ class _AddHabitsState extends State<AddHabits> {
               },
             ),
             SizedBox(height : 30) , 
+            
+            Expanded(
+              child: _habits.isNotEmpty
+                  ? ListView.builder(
+                      itemCount: _habits.length,
+                      itemBuilder: (context, index) {
+                        final habitName = _habits[index]; 
+                        return SizedBox(
+                          width : 200 , 
+                          child: GetHabit(habitName, false),
+                        );
+                      },
+                    )
+                  : Center(
+                      child:Center ( child : Column (
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                      Image.asset("assets/images/ugh.png" , width : 100 , height : 100),
+                      Text(
+                        "No habits added yet",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                      SizedBox(height: 20),
+                      
+                    ],)
+                    ) ) ,
+                    
+            ),
+           
           ],
         ),
       ),
