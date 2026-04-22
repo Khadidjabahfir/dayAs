@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height : 20), 
+            SizedBox(height : 30), 
             Image.asset('assets/images/home.png' , width :87 , height: 102, ) , 
             SizedBox(height: 10,),
             SizedBox(height : 30), 
@@ -101,7 +101,8 @@ Widget getHomePageSections(BuildContext context ,UserModel user, List<dailyHabit
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text("No Tasks Found , Try Exploring The List Of Role Models " , style : LineStyles.context.copyWith(color : AppColors.lightGrey , fontWeight: FontWeight.normal)), 
+                    Text("No Tasks Found  " , style : LineStyles.context.copyWith(color : AppColors.lightGrey , fontWeight: FontWeight.normal)), 
+                    Text("Try To Explore Role Models List  " , style : LineStyles.context.copyWith(color : AppColors.lightGrey , fontWeight: FontWeight.normal)), 
                     SizedBox(height: 20,), 
                     GestureDetector(
                       onTap: () {

@@ -15,8 +15,7 @@ Widget getButton (String line , Color color , {VoidCallback? onTap} ) {
     Center( child : Text(line , style : LineStyles.btnText.copyWith(color : AppColors.darkGrey , fontWeight: FontWeight.normal)), 
   ),
   ),
-  )
- ; 
+  ); 
 }
 Widget getAsmallerbtn (String line , Color color , {VoidCallback? onTap} ) {
     return GestureDetector(
@@ -32,6 +31,5 @@ Widget getAsmallerbtn (String line , Color color , {VoidCallback? onTap} ) {
       Center( child : Text(line , style : LineStyles.subtitle.copyWith(color : AppColors.darkGrey , fontWeight: FontWeight.normal)), 
     ),
     ),
-    )
-  ; 
+    ); 
 }

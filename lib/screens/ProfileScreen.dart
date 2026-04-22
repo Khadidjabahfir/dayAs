@@ -31,21 +31,20 @@ class Profilescreen extends StatelessWidget {
 
         if (!snapshot.hasData || snapshot.data == null) {
           return Scaffold(
+            backgroundColor: Colors.white,
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Text("No email saved. Please log in."),
                   const SizedBox(height: 16),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(builder: (context) => Loginscreen()),
-                      );
-                    },
-                    child: const Text("Go to Login"),
-                  ),
+                  getButton("Login", AppColors.purplePastel , onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => Loginscreen()),
+                    );
+                  }),
                 ],
               ),
             ),
@@ -95,8 +94,8 @@ class _ProfileAccountInfoState extends State<ProfileAccountInfo> {
   @override
   void initState() {
     super.initState();
-    _usernameController = TextEditingController(text: widget.user.name ?? '');
-    _birthdayController = TextEditingController(text: widget.user.birthday ?? '');
+    _usernameController = TextEditingController(text: widget.user.name );
+    _birthdayController = TextEditingController(text: widget.user.birthday);
   }
 
   @override
