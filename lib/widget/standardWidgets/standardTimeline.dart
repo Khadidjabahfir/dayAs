@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:dayas/widget/standardWidgets/standardCircularTimeline.dart';
+import 'package:dayas/widget/standardWidgets/standardGetLine.dart';
 
 Widget getTimeline (Color color , double height ) {
   return Column(
@@ -10,26 +12,4 @@ Widget getTimeline (Color color , double height ) {
     ],
   );
 }
-Widget getCircularTimeline (Color color ) {
-  return Container(
-    width : 20 , 
-    height: 20, 
-    decoration: BoxDecoration(
-      color: Colors.white,
-      shape: BoxShape.circle,
-      border: Border.all(
-        color: color,
-        width: 2,     
-      )
-    ),
-  ); 
-}
-Widget getLine(Color color , double height ) {
-  return Container(
-    height: height,
-    width: 1.5,
-    decoration: BoxDecoration(
-      color: color
-    ),
-  ); 
-}
+

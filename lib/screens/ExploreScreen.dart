@@ -1,7 +1,7 @@
 import 'package:dayas/cubits/ExploreCubit.dart';
 import 'package:dayas/states/ExploreStates.dart';
 import 'package:dayas/styles/colors.dart';
-import 'package:dayas/widget/herocard.dart';
+import 'package:dayas/widget/hero/herocard.dart';
 import 'package:dayas/widget/searchwidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
