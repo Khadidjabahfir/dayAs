@@ -3,9 +3,9 @@ import 'package:dayas/screens/SignUpScreen.dart';
 import 'package:dayas/states/LoginStates.dart';
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
-import 'package:dayas/widget/navBarWidget.dart';
-import 'package:dayas/widget/standardButton.dart';
-import 'package:dayas/widget/standardInput.dart';
+import 'package:dayas/widget/standardWidgets/navBarWidget.dart';
+import 'package:dayas/widget/standardWidgets/standardButton.dart';
+import 'package:dayas/widget/standardWidgets/standardInput.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 class Loginscreen extends StatefulWidget {

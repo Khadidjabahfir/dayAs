@@ -1,6 +1,6 @@
 import 'package:dayas/styles/colors.dart';
-import 'package:dayas/widget/chatwidget.dart';
-import 'package:dayas/widget/standardHeroprofile.dart';
+import 'package:dayas/widget/chat/chatwidget.dart';
+import 'package:dayas/widget/standardWidgets/standardHeroprofile.dart';
 import 'package:flutter/material.dart';
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});

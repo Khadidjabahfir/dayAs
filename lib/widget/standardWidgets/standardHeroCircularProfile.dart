@@ -1,6 +1,6 @@
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
-import 'package:dayas/widget/standardHeroprofile.dart';
+import 'package:dayas/widget/standardWidgets/standardHeroprofile.dart';
 import 'package:flutter/material.dart';
 Widget GetHeroCircularProfile (String ImagePath, Color color , String Name , String Category){
   return Column (children: [
