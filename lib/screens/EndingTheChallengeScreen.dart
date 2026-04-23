@@ -1,6 +1,6 @@
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
-import 'package:dayas/widget/standardButton.dart';
+import 'package:dayas/widget/standardWidgets/standardButton.dart';
 import 'package:flutter/material.dart';
 
 

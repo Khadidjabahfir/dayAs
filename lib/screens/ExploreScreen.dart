@@ -1,7 +1,7 @@
 import 'package:dayas/cubits/ExploreCubit.dart';
 import 'package:dayas/states/ExploreStates.dart';
 import 'package:dayas/styles/colors.dart';
-import 'package:dayas/widget/herocard.dart';
+import 'package:dayas/widget/hero/herocard.dart';
 import 'package:dayas/widget/searchwidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -49,7 +49,7 @@ class Explorescreen extends StatelessWidget {
                           itemBuilder: (context, index) {
                             final hero = state.herolist[index];
                             final color = getColorFromString(hero.color);
-                            return GetHeroCard(
+                            return getHeroCard(
                               context , 
                               hero.name,
                               hero.role,

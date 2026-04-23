@@ -1,8 +1,8 @@
 import 'package:dayas/screens/ExploreScreen.dart';
 import 'package:dayas/screens/editTasksScreen.dart';
-import 'package:dayas/widget/customUserTask.dart';
-import 'package:dayas/widget/customsubtasks.dart';
-import 'package:dayas/widget/standardTimeline.dart';
+import 'package:dayas/widget/customization/customUserTask.dart';
+import 'package:dayas/widget/customization/customsubtasks.dart';
+import 'package:dayas/widget/standardWidgets/standardTimeline.dart';
 import 'package:flutter/material.dart';
 import 'package:dayas/models/customizedUserTask.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -51,7 +51,7 @@ class CustomTaskWithSubtasks extends StatelessWidget {
               if (isSubtask)
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: subCustomTasks(
+                  child: SubCustomTasks(
                     taskName: task.taskName,
                     start: task.taskStart,
                     end: task.taskEnd,

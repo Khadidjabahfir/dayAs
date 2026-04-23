@@ -4,8 +4,8 @@ import 'package:dayas/screens/LoginScreen.dart';
 import 'package:dayas/states/userStates.dart';
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
-import 'package:dayas/widget/standardButton.dart';
-import 'package:dayas/widget/standardInput.dart';
+import 'package:dayas/widget/standardWidgets/standardButton.dart';
+import 'package:dayas/widget/standardWidgets/standardInput.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -126,7 +126,7 @@ class _ProfileAccountInfoState extends State<ProfileAccountInfo> {
             const SizedBox(height: 20),
 
            
-            GetInput(
+            getInput(
               "Username",
               "Your username",
               controller: _usernameController,
@@ -134,7 +134,7 @@ class _ProfileAccountInfoState extends State<ProfileAccountInfo> {
             const SizedBox(height: 10),
 
             
-            GetInput(
+            getInput(
               "Birthday",
               "Your birthday",
               isDate: true,

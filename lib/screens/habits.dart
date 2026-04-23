@@ -1,8 +1,8 @@
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
 import 'package:dayas/widget/habitWidget.dart';
-import 'package:dayas/widget/standardButton.dart';
-import 'package:dayas/widget/standardInput.dart';
+import 'package:dayas/widget/standardWidgets/standardButton.dart';
+import 'package:dayas/widget/standardWidgets/standardInput.dart';
 import 'package:flutter/material.dart';
 
 class AddHabits extends StatefulWidget {
@@ -38,7 +38,7 @@ class _AddHabitsState extends State<AddHabits> {
               style: LineStyles.secodHeader.copyWith(color : AppColors.darkGrey),
             ),
             SizedBox(height: 30),
-            GetInput("Habits", "Habit name" , controller: _habitController),
+            getInput("Habits", "Habit name" , controller: _habitController),
             SizedBox(height: 16),
             getButton("Add Habit", AppColors.yellowPastel ,  onTap: () {
                 final habit = _habitController.text.trim();
@@ -63,7 +63,7 @@ class _AddHabitsState extends State<AddHabits> {
                         final habitName = _habits[index]; 
                         return SizedBox(
                           width : 200 , 
-                          child: GetHabit(habitName, false),
+                          child: getHabit(habitName, false),
                         );
                       },
                     )

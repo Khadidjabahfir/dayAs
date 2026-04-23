@@ -1,7 +1,7 @@
 import 'package:dayas/styles/lineStyles.dart';
 import 'package:flutter/material.dart';
 
-Widget HighlightedSubtitle(BuildContext context, String line, Widget page) {
+Widget highlightedSubtitle(BuildContext context, String line, Widget page) {
   return GestureDetector(
     onTap: () {
       Navigator.push(

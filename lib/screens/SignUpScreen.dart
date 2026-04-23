@@ -3,9 +3,9 @@ import 'package:dayas/screens/LoginScreen.dart';
 import 'package:dayas/states/SignUpState.dart';
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
-import 'package:dayas/widget/navBarWidget.dart';
-import 'package:dayas/widget/standardButton.dart';
-import 'package:dayas/widget/standardInput.dart';
+import 'package:dayas/widget/standardWidgets/navBarWidget.dart';
+import 'package:dayas/widget/standardWidgets/standardButton.dart';
+import 'package:dayas/widget/standardWidgets/standardInput.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -78,13 +78,13 @@ class _SignupscreenState extends State<Signupscreen> {
                       style: LineStyles.header
                           .copyWith(color: AppColors.darkGrey)),
                   const SizedBox(height: 20),
-                  GetInput("Email", "Your Email",
+                  getInput("Email", "Your Email",
                       controller: emailController),
                   const SizedBox(height: 10),
-                  GetInput("Password", "Enter Your Password",
+                  getInput("Password", "Enter Your Password",
                       controller: passwordController, obscureText: true),
                   const SizedBox(height: 10),
-                  GetInput("Verify Password", "Re-enter Your Password",
+                  getInput("Verify Password", "Re-enter Your Password",
                       controller: verifyPasswordController,
                       obscureText: true),
                   const SizedBox(height: 20),

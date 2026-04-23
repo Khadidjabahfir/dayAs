@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
 
-class subCustomTasks extends StatelessWidget {
+class SubCustomTasks extends StatelessWidget {
   final String taskName;
   final String start;
   final String end;
@@ -11,7 +11,7 @@ class subCustomTasks extends StatelessWidget {
   final VoidCallback onDoubleTap;
   final VoidCallback? onTap;
 
-  const subCustomTasks({
+  const SubCustomTasks({
     super.key,
     required this.taskName,
     required this.start,

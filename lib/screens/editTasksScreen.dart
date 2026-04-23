@@ -3,13 +3,14 @@ import 'package:dayas/screens/ExploreScreen.dart';
 import 'package:dayas/states/Customstates.dart';
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
-import 'package:dayas/widget/customUserTask.dart';
-import 'package:dayas/widget/customizedUserTask.dart';
-import 'package:dayas/widget/standardButton.dart';
-import 'package:dayas/widget/standardInput.dart';
+import 'package:dayas/widget/customization/customUserTask.dart';
+import 'package:dayas/widget/customization/customizedUserTask.dart';
+import 'package:dayas/widget/standardWidgets/standardButton.dart';
+import 'package:dayas/widget/standardWidgets/standardInput.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dayas/cubits/CustomCubit.dart';
+import 'package:dayas/widget/standardWidgets/standardSmallButton.dart';
 
 class EditTasksScreen extends StatefulWidget {
   final CustomizedUserTask task;
@@ -138,13 +139,13 @@ class _EditTasksScreenState extends State<EditTasksScreen> {
                       ),
                     ),
                   ),
-                  GetInput(
+                  getInput(
                     "task",
                     "Task name",
                     controller: _tasknameController,
                   ),
                   SizedBox(height: 20),
-                  GetInput(
+                  getInput(
                     "time",
                     "start - end",
                     controller: _timeController,

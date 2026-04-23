@@ -4,8 +4,8 @@ import 'package:dayas/screens/ExploreScreen.dart';
 import 'package:dayas/states/chatStates.dart';
 import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
-import 'package:dayas/widget/chatOutline.dart';
-import 'package:dayas/widget/standardButton.dart';
+import 'package:dayas/widget/chat/chatOutline.dart';
+import 'package:dayas/widget/standardWidgets/standardButton.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -48,7 +48,7 @@ Widget DisplayChat(List<Heromodel> list) {
           itemBuilder: (context, index) {
 
             final hero = list[index];
-            return GetChatOutline(
+            return getChatOutline(
               getColorFromString(hero.color),
               hero.imageUrl,
               hero.name,

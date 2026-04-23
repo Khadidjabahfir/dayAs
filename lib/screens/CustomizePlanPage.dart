@@ -4,9 +4,9 @@ import 'package:dayas/screens/EndingTheChallengeScreen.dart';
 import 'package:dayas/screens/ExploreScreen.dart';
 import 'package:dayas/states/Customstates.dart';
 import 'package:dayas/styles/lineStyles.dart';
-import 'package:dayas/widget/customWithSubTasks.dart';
-import 'package:dayas/widget/standardButton.dart';
-import 'package:dayas/widget/standardHeroCircularProfile.dart';
+import 'package:dayas/widget/customization/customWithSubTasks.dart';
+import 'package:dayas/widget/standardWidgets/standardButton.dart';
+import 'package:dayas/widget/hero/standardHeroCircularProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -44,7 +44,7 @@ class CustomizePlanPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(height: 40),
-              GetHeroCircularProfile(hero.imageUrl, color, hero.name, hero.role),
+              getHeroCircularProfile(hero.imageUrl, color, hero.name, hero.role),
               const SizedBox(height: 20),
                Expanded(
                 child: Center (

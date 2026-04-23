@@ -1,6 +1,6 @@
 import 'package:dayas/cubits/UserCubit.dart';
 import 'package:dayas/screens/ProfileScreen.dart';
-import 'package:dayas/widget/navBarWidget.dart';
+import 'package:dayas/widget/standardWidgets/navBarWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dayas/cubits/CustomCubit.dart';
