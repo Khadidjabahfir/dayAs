@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-Widget GetHeroPhoto (String ImagePath , Color color) {
+Widget getHeroPhoto (String ImagePath , Color color) {
   return Stack(
     alignment: Alignment.center,
     children: [

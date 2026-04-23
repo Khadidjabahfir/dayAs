@@ -49,7 +49,7 @@ class Explorescreen extends StatelessWidget {
                           itemBuilder: (context, index) {
                             final hero = state.herolist[index];
                             final color = getColorFromString(hero.color);
-                            return GetHeroCard(
+                            return getHeroCard(
                               context , 
                               hero.name,
                               hero.role,

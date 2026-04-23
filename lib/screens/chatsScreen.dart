@@ -48,7 +48,7 @@ Widget DisplayChat(List<Heromodel> list) {
           itemBuilder: (context, index) {
 
             final hero = list[index];
-            return GetChatOutline(
+            return getChatOutline(
               getColorFromString(hero.color),
               hero.imageUrl,
               hero.name,

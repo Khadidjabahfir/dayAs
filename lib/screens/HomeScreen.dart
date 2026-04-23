@@ -85,7 +85,7 @@ Widget getHomePageSections(BuildContext context ,UserModel user, List<dailyHabit
                     itemCount: habits.length,
                     itemBuilder: (context, index) {
                       final habit = habits[index];
-                      return GetHabit(habit.habitName, habit.isDone);
+                      return getHabit(habit.habitName, habit.isDone);
                     },
                   ),
           ),

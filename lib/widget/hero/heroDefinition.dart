@@ -2,7 +2,7 @@ import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
 import 'package:flutter/material.dart';
 
-Widget GetHeroDef (String Name , String Category ){
+Widget getHeroDef (String Name , String Category ){
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     crossAxisAlignment: CrossAxisAlignment.center,

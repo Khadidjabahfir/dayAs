@@ -126,7 +126,7 @@ class _ProfileAccountInfoState extends State<ProfileAccountInfo> {
             const SizedBox(height: 20),
 
            
-            GetInput(
+            getInput(
               "Username",
               "Your username",
               controller: _usernameController,
@@ -134,7 +134,7 @@ class _ProfileAccountInfoState extends State<ProfileAccountInfo> {
             const SizedBox(height: 10),
 
             
-            GetInput(
+            getInput(
               "Birthday",
               "Your birthday",
               isDate: true,

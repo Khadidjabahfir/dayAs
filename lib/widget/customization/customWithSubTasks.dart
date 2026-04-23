@@ -51,7 +51,7 @@ class CustomTaskWithSubtasks extends StatelessWidget {
               if (isSubtask)
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
-                  child: subCustomTasks(
+                  child: SubCustomTasks(
                     taskName: task.taskName,
                     start: task.taskStart,
                     end: task.taskEnd,

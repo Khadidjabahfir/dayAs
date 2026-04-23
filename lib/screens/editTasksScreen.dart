@@ -139,13 +139,13 @@ class _EditTasksScreenState extends State<EditTasksScreen> {
                       ),
                     ),
                   ),
-                  GetInput(
+                  getInput(
                     "task",
                     "Task name",
                     controller: _tasknameController,
                   ),
                   SizedBox(height: 20),
-                  GetInput(
+                  getInput(
                     "time",
                     "start - end",
                     controller: _timeController,

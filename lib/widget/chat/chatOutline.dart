@@ -2,7 +2,7 @@ import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
 import 'package:flutter/material.dart';
 
-Widget GetChatOutline(Color color, String imagePath, String heroName , {VoidCallback? onTap}) {
+Widget getChatOutline(Color color, String imagePath, String heroName , {VoidCallback? onTap}) {
   const subtitle = "fans"; 
   return GestureDetector(
   onTap: onTap,

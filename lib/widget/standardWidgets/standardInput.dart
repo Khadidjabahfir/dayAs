@@ -2,7 +2,7 @@ import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart'; 
-Widget GetInput(
+Widget getInput(
   String headerName,
   String inputField, {
   TextEditingController? controller,

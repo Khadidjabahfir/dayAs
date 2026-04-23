@@ -4,7 +4,7 @@ import 'package:dayas/screens/CustomizePlanPage.dart';
 import 'package:dayas/screens/ExploreScreen.dart';
 import 'package:dayas/styles/lineStyles.dart';
 import 'package:dayas/widget/standardWidgets/standardButton.dart';
-import 'package:dayas/widget/standardWidgets/standardHeroCircularProfile.dart';
+import 'package:dayas/widget/hero/standardHeroCircularProfile.dart';
 import 'package:dayas/widget/standardWidgets/standardHerotask.dart';
 import 'package:dayas/widget/standardWidgets/standardTimeline.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +35,7 @@ class _HeroRoutineScreenState extends State<HeroRoutineScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const SizedBox(height: 40),
-          GetHeroCircularProfile(hero.imageUrl, color, hero.name, hero.role),
+          getHeroCircularProfile(hero.imageUrl, color, hero.name, hero.role),
           const SizedBox(height: 20),
           getTasks(hero), 
           const SizedBox(height: 20),

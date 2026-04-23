@@ -2,7 +2,7 @@ import 'package:dayas/styles/colors.dart';
 import 'package:dayas/styles/lineStyles.dart';
 import 'package:flutter/material.dart';
 
-Widget GetHabit(String habitName, bool isdone, {VoidCallback? onTap}) {
+Widget getHabit(String habitName, bool isdone, {VoidCallback? onTap}) {
   return GestureDetector(
     onTap: onTap,
     child: Container(

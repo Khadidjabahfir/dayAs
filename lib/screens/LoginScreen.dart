@@ -69,10 +69,10 @@ class _LoginscreenState extends State<Loginscreen> {
                       style: LineStyles.header
                           .copyWith(color: AppColors.darkGrey)),
                   const SizedBox(height: 20),
-                   GetInput("Email", "Your Email",
+                   getInput("Email", "Your Email",
                       controller: emailController),
                   const SizedBox(height: 10),
-                  GetInput("Password", "Enter Your Password",
+                  getInput("Password", "Enter Your Password",
                       controller: passwordController, obscureText: true),
                   const SizedBox(height: 10),
                   SizedBox(height: 20),
