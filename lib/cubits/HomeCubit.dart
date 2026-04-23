@@ -2,8 +2,8 @@ import 'package:dayas/models/UserModel.dart';
 import 'package:dayas/models/customizedUserTask.dart';
 import 'package:dayas/models/dailyHabitsModel.dart';
 import 'package:dayas/states/HomeStates.dart';
-import 'package:dayas/styles/colors.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 class Homecubit extends Cubit<Homestates> {
   Homecubit() : super (Homestates()); 
   void fetchInitialHome (String email ) async {
